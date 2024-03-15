@@ -1,4 +1,4 @@
-##**Welcome to My Authorship Attribution Project**
+**Welcome to My Authorship Attribution Project**
 
 Hello everyone,
 
