@@ -1,48 +1,52 @@
-To run the web application locally on your machine, follow these steps:
+# Running the Web Application Locally
 
-**Prerequisites**
-Ensure Python 3 is installed on your machine.
+## Prerequisites
+- Ensure you have Python 3.x installed on your system. You can download Python [here](https://www.python.org/downloads/).
 
+## Set Up the Environment
 
-**Set Up the Environment**
-Open a terminal (Command Prompt on Windows, Terminal on macOS and Linux).
-Change the current working directory to the location where you want the cloned directory to be made.
-Clone the repository by doing:
+1. **Clone the Repository**: Open a terminal and run the following commands:
+    ```bash
+    git clone https://github.com/nisakhantalib/fyp.git
+    cd fyp
+    ```
 
-**Create a virtual environment** (this keeps your dependencies organized and does not conflict with other projects):
+2. **Create and Activate a Virtual Environment**:
+    - For Windows:
+        ```bash
+        python -m venv venv
+        .\venv\Scripts\activate
+        ```
+        If you encounter any warnings, you can run `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process` and then try activating the environment again.
 
-python -m venv venv
-**Activate the virtual environment:**
+    - For macOS and Linux:
+        ```bash
+        python -m venv venv
+        source venv/bin/activate
+        ```
 
-On Windows:
-.\venv\Scripts\activate
+3. **Install Dependencies**: Install the required dependencies by running:
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-On macOS and Linux:
-source venv/bin/activate
+## Prepare the Data
+- The dataset `50human100eachgpt4withnumber.xlsx` is included in the repository. For more information on data extraction and GPT-4 text generation, run the following scripts:
+    ```bash
+    python autoextraction.py
+    python promptingGPT4.py
+    ```
 
-**Install the required dependencies using the following command:**
+## Models Download
+- The trained models are hosted on Google Drive due to their large size. Please download them from the following [link](https://drive.google.com/drive/folders/1kG_oZCJgX7tpPZRCKc6-sQmQ9rc9RJeO?usp=sharing).
+- After downloading, unzip the files and place them in the `models/` directory in the project folder.
 
-pip install -r requirements.txt
+## Training and Saving the Models
+- If you prefer to train and save the models manually, execute the `submission.ipynb` script. It is recommended to run this in a Jupyter environment, such as Google Colab or Jupyter Notebook/Lab.
 
-**Prepare the Data**
-The dataset used for training and testing model , 50human100eachgpt4withnumber.xlsx is already available in the repository. 
-The input dataset used is the reuters5050 dataset, downloaded into drive. for more info on extracting text and prompting gpt4 to produce text,run the following scripts:
-
-python autoextraction.py
-python promptingGPT4.py
-
-**Saved Model**
-Visit the following google drive link: https://drive.google.com/drive/folders/1kG_oZCJgX7tpPZRCKc6-sQmQ9rc9RJeO?usp=drive_link
-Download the required model files to your local machine. Note: you may need to download each file individually or download the entire folder as a zip file (right-click on the folder and select "Download").
-
-Once downloaded, move the model files to the appropriate directory in your project's root folder.Create a subfolder called 'models' and move all the downloaded models into the subfolder. 
-
-**Training and Saving the Models**
-To manually train and save the models, run the following script. Note that this script refers to a Jupyter notebook. It is recommended to run this in a Jupyter environment like Google Colab or Jupyter Lab/Notebook:
-jupyter notebook submission.ipynb
-
-**Running the Web Application**
-To start the web server and run the web application, execute:
-
-python app.py
-Open a web browser and go to http://localhost:5000 to view the application.
+## Running the Web Application
+- Start the web application by running:
+    ```bash
+    python app.py
+    ```
+- Open a web browser and navigate to `http://localhost:5000` to view the application.
