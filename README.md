@@ -3,14 +3,11 @@ To run the web application locally on your machine, follow these steps:
 **Prerequisites**
 Ensure Python 3 is installed on your machine.
 
-Download or clone this repository to your local machine.
 
 **Set Up the Environment**
 Open a terminal (Command Prompt on Windows, Terminal on macOS and Linux).
-
-Navigate to the project's root directory using the cd command. Replace <project-directory> with the path to your project directory:
-
-cd <project-directory>
+Change the current working directory to the location where you want the cloned directory to be made.
+Clone the repository by doing:
 
 **Create a virtual environment** (this keeps your dependencies organized and does not conflict with other projects):
 
