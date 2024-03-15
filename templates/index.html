@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Authorship Attribution</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .text-item { background-color: #f0f0f0; padding: 10px; margin-bottom: 10px; border-radius: 5px; }
+        .prediction { margin-top: 20px; }
+    </style>
+</head>
+<body>
+<div class="container mt-5">
+    <h2 class="mb-4">Authorship Attribution</h2>
+    <form method="POST">
+        <div class="form-group">
+            <label for="text_selection">Select Text:</label>
+            <select id="text_selection" name="text_selection" class="form-control">
+                <option value="" disabled>Choose a text...</option>
+                {% for item in texts %}
+
+                <option value="{{ loop.index0 }}" {% if loop.index0|string == selected_text_index %}selected{% endif %}>
+                    {{ item.text | truncate(130) }}
+                </option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="model_choice">Select Model:</label>
+            <select id="model_choice" name="model_choice" class="form-control">
+                <option value="" disabled>Select your model</option>
+                {% set models = ['svm', 'xgboost', 'logreg', 'xgboost_stylo','roberta', 'distilbert','softvoting_ml', 'softvoting_llm',  'tfidf_dnn', 'distilbert_stylo_attention_svm', 'distilbert_logreg', 'hardvoting'] %}
+                {% for model in models %}
+                <option value="{{ model }}" {% if model_selected == model %}selected{% endif %}>
+                    {{ model|title }}
+                </option>
+                {% endfor %}
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Predict Author</button>
+    </form>
+    {% if predicted_author is not none %}
+    <div class="prediction">
+        <h3>Predicted Author: {{ predicted_author }}</h3>
+        {% if true_author is not none %}
+        <h3>True Author: {{ true_author }}</h3>
+        {% endif %}
+    </div>
+    {% endif %}
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
