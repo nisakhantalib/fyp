@@ -1,4 +1,20 @@
-# Running the Web Application Locally
+##**Welcome to My Authorship Attribution Project**
+
+Hello everyone,
+
+Thank you for visiting my project page. This final year project has been a significant part of my studies, focusing on the interesting area of figuring out who wrote a particular piece of text. This becomes especially intriguing when we add texts written by AI, like ChatGPT, into the usual mix of human-written texts.
+
+In this project, I explore how to tell apart writings by different authors. This can be tricky because we're not just looking at a few authors but at many, and now we're also including texts written by a large language model. I've worked on creating a collection of writings that includes both human and AI pieces to test out different ways to find out who wrote what.
+
+I've tried a range of classification techniques, from basic machine learning methods to more advanced approaches like attention mechanisms and fusion strategies, to see which works best in identifying the author of a text.
+Additionally, I explored a combination of traditional stylometry, which examines the unique writing style of authors, with modern word embeddings, a method that represents text in numerical form to uncover deeper linguistic patterns.
+
+In this GitHub repository, you'll find all the data, code, and results from my work. I aim to make this a useful resource for others interested in the same topic, whether for study, research, or just curiosity.
+
+I hope you find this work useful and interesting. I'm open to questions, feedback, or any thoughts you might have.
+
+
+## Running the Web Application Locally
 
 ## Prerequisites
 - Ensure you have Python 3.x installed on your system. You can download Python [here](https://www.python.org/downloads/).
